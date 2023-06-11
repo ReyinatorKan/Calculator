@@ -2,41 +2,65 @@
         <body><!DOCTYPE html>
 <html>
     <head>
-
+        <link href="https://fonts.googleapis.com/css2?family=DynaPuff&display=swap" rel="stylesheet">
+        <style>
+            .mathpara{
+                font-family: 'DynaPuff', cursive;
+                padding: 10px;
+                margin: 20px;
+            }
+            .calculator{
+                font-family: 'DynaPuff', cursive;
+                background-color:grey;
+                margin-left:100px;
+                margin-right:100px;
+                border-radius:30px;
+            }
+        </style>
     </head>
 
-    <body style="background-color:#0e5708">
+    <body style="background-color:white">
+        <center><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAth8EMGBLmQ6m91dnVffF-B5GCYjl0BQ2xg&usqp=CAU" width="100%">
+        <p class="mathpara">The reason that it is important to learn maths is because it provides an effective way of building mental discipline and encourages logical reasoning and mental rigor. In addition, mathematical knowledge plays a crucial role in understanding the contents of other school subjects such as science, social studies, and even music and art.</p>
+        <div class="calculator"> 
+            <h2>Calculator</h2>        
+            <input type="number" placeholder="Please enter a number" id="num1"><br><br>
+            <button onclick="addfunc()">+</button>
+            <button onclick="subfunc()">-</button>
+            <button onclick="divfunc()">÷</button>
+            <button onclick="mulfunc()">x</button><br><br>
+            <input type="number" placeholder="Please enter another number" id="num2">
+            <p id="calcanswer"></p><br>
+        </div>
+        <div>
 
-        <center><h2 style="background-color:#f5b520">The Inter-Convertable Length Calculator</h2></center>
-
-        <form style="background-color:#f2e688;margin-top:50px;margin-right:150px;margin-bottom:150px;margin-left:150px" name="converter">
-            <center>
-                <br>
-            Cm: <input type="number" name="cm" onChange="cmConvert()">
-                <br><br>
-            Inch: <input type="number" name="inch" onChange="inchConvert()">
-                <br><br>
-            Feet: <input type="number" name="feet" onChange="feetConvert()">
-                <br>
-                <br><br>
-            </center>
-        </form>
-
-        <script> function cmConvert(){
-            document.converter.inch.value = document.converter.cm.value/2.54
-            document.converter.feet.value = document.converter.cm.value/30.48
-        }
-                 function inchConvert(){
-            document.converter.cm.value = document.converter.inch.value*2.54
-            document.converter.feet.value = document.converter.inch.value/12
-        }
-                 function feetConvert(){
-            document.converter.cm.value = document.converter.feet.value*30.48
-            document.converter.inch.value = document.converter.feet.value*12
-        }
-        </script>
+        </div>
+        </center>
     </body>
 </html></body>
         <style></style>
-        <script></script>
+        <script>function addfunc(){
+    var num1 = document.getElementById("num1").value;
+    var num2 = document.getElementById("num2").value;
+    var addanswer = parseInt(num1) + parseInt(num2);
+    document.getElementById("calcanswer").innerHTML=addanswer;
+}
+function subfunc(){
+    var num1 = document.getElementById("num1").value;
+    var num2 = document.getElementById("num2").value;
+    var subanswer = parseInt(num1) - parseInt(num2);
+    document.getElementById("calcanswer").innerHTML=subanswer;
+}
+function divfunc(){
+    var num1 = document.getElementById("num1").value;
+    var num2 = document.getElementById("num2").value;
+    var divanswer = parseInt(num1) / parseInt(num2);
+    document.getElementById("calcanswer").innerHTML=divanswer;
+}
+function mulfunc(){
+    var num1 = document.getElementById("num1").value;
+    var num2 = document.getElementById("num2").value;
+    var mulanswer = parseInt(num1) * parseInt(num2);
+    document.getElementById("calcanswer").innerHTML=mulanswer;
+}</script>
       </html>
